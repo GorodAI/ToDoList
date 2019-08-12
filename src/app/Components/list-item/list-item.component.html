@@ -1,0 +1,17 @@
+<div class="row m-1  border border-success rounded" [class.done]="displayedItem.item.status"> 
+        <input type="checkbox" [(ngModel)]="displayedItem.item.status" class="col-2">       
+        <span *ngIf="!displayedItem.title_editing" class="col-4"
+                (dblclick)="editTitleItem(displayedItem)">{{displayedItem.item.title}}</span>
+        <input *ngIf="displayedItem.title_editing"  class="col-4"
+                [(ngModel)]="displayedItem.item.title" 
+                (blur)="doneTitleEditing(displayedItem)"
+                appFocusoutOnEnter appAutofocus/>
+        <span *ngIf="!displayedItem.text_editing" class="col-4"
+                (dblclick)="editTextItem(displayedItem)">{{displayedItem.item.text}}</span>
+        <input *ngIf="displayedItem.text_editing" class="col-4" 
+                [(ngModel)]="displayedItem.item.text" 
+                (blur)="doneTexEditing(displayedItem)"
+                appFocusoutOnEnter appAutofocus/>
+        <button (click)="deleteItem(displayedItem.item)" class="btn btn-danger col-1">X</button>
+        <button (click)="getItem(displayedItem.item)" class="btn btn-info col-1">i</button>
+</div>

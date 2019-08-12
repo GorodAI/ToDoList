@@ -1,0 +1,8 @@
+<div class="container">
+    <app-add-new-list-item (addNew)="addNew($event)"></app-add-new-list-item>
+    <app-list-item *ngFor = "let item of ListItems" 
+                    [item]="item" 
+                    (delItem)="delItem($event)" 
+                    (getInfoItem)="getInfoItem($event)"
+                    (updateItem)="updateItem($event)"></app-list-item>
+</div>

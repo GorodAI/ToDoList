@@ -1,0 +1,5 @@
+ <form [formGroup]="newItemForm" (ngSubmit)="newItem(newItemForm.value)" class="row m-2 border border-primary">
+    <input type="text" placeholder="title" formControlName="title" class="col-5">
+    <input type="text" placeholder="text" formControlName="text" class="col-5">
+    <button class="button" type="submit" class="btn btn-primary col-2">Add</button>
+</form>
